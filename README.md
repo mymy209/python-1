@@ -7,7 +7,6 @@
 | Datatypes |
 | Basic Functions |
 | Control Flow |
-<br>
 
 ## Overview
 
@@ -57,6 +56,12 @@ type(True)
 Functions are great at "encapsulating" a task by combining many instructions into a single line of code. 
 This make code easier to read, understand, organize, and follow the DRY principle of programming. (Don't Repeat Yourself)
 
+There are two steps to creating a funtion: 
+1. Declare and define the function
+2. Call the function
+
+Most of the times, data we use in applications are not static and mutate -- we use variables to make it easier to handle these data!
+
 Just to get started, let's declare some variables
 ```python
 teacher = 'Myra'
@@ -66,6 +71,26 @@ ready = True
 
 One of the most useful tool in coding is using a console -- it is a text-only computer interface that comes in handy to check what is going on when the application/code is running. 
 `print()` is a built-in function to make whatever in the parameter print out in the console. 
+
+Let's mess with the `print()` a little bit: 
+
+```python
+print('hello')
+print(1 + 2)
+print(teacher)
+```
+
+Now let's get a little more creative: 
+
+```python
+print('Today is day ' + str(day) + ' of Python coding!')
+print('Is ready to get coding: ' + str(ready))
+```
+
+You can concatinate (combine) words and variables, and print them all together in one single line!
+However, concatination can only be done when the data types of each element is the same. 
+To compensate this, we use the `str()` converts the data type (class type) to a string. 
+
 
 There are many built-in functions that complete specific tasks, but most of the times we code custom functions to do whatever we need to do!
 
@@ -85,6 +110,8 @@ Create a function called `add_nums2()` that
 
 </p>
 </details>
+
+## Control Flow
 
 ### Exercise 2
 
