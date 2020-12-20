@@ -115,7 +115,24 @@ Create a function called `add_nums2()` that
 
 ### Exercise 2
 
-Create a function called `signal()` which prompts what color the signal is; green, yellow, or red?
+Create a function called `signal()` that 
+- prompts what color the signal is
+- prints a message depending on color inputted: 
+    - green --> 'Go!'
+    - yellow --> 'Yield!'
+    - red --> 'Stop!'
+    - anything else --> 'Bummer...'
+
+<details>
+<summary>Bonus</summary>
+<p>
+
+Make it case insensitive!
+- e.g) Green, GREEN, grEeN, green would be all the same 
+Side note: google is your bestfriend :)
+
+</p>
+</details>
 
 The message returned would change based on the input; 
 
