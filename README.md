@@ -91,7 +91,6 @@ You can concatinate (combine) words and variables, and print them all together i
 However, concatination can only be done when the data types of each element is the same. 
 To compensate this, we use the `str()` converts the data type (class type) to a string. 
 
-
 There are many built-in functions that complete specific tasks, but most of the times we code custom functions to do whatever we need to do!
 
 ### Exercise 1
@@ -112,6 +111,115 @@ Create a function called `add_nums2()` that
 </details>
 
 ## Control Flow
+
+Control flow refers to the order in which code executes in a program as determined by the use of constructs in the code.
+
+Generally, there are two types of control flow: 
+- branching (`if`)
+- looping (`for`
+- jump (`return`)
+
+### Branching
+
+Branching allows us to run one of several code paths depending upon the result of conditional expression(s). 
+
+Single path `if` statement:
+
+```python
+if condition: 
+    # code block
+```
+
+<details>
+<summary>Example</summary>
+<p>
+
+```python
+shoe_lace = 'untied'
+if shoe_lace == 'untied':
+    print('Tie your shoe lace!')
+```
+
+</p>
+</details>
+
+
+Dual path `if..else` statement:
+
+```python
+if condition: 
+    # code block
+else:
+    # code block
+```
+
+<details>
+<summary>Example</summary>
+<p>
+
+```python
+shoe_lace = 'untied'
+if shoe_lace == 'untied':
+    print('Tie your shoe lace!')
+else:
+    print('Happy feet :)')
+```
+
+</p>
+</details>
+
+Multi-path `if..elif..else` statement:
+
+```python
+if condition1:
+    # code block
+elif condition2:
+    # code block
+elif condition3:
+    # code block
+else: 
+    #code block
+```
+
+Side note: `else` is always optional!
+
+<details>
+<summary>Example</summary>
+<p>
+
+```python
+shoe_lace = 'untied'
+if shoe_lace == 'untied':
+    print('Tie your shoe lace!')
+elif shoe_lace == 'tied':
+    print('Happy feet :)')
+else:
+    print('Check your shoe lace!')
+```
+
+</p>
+</details>
+
+## Looping
+
+`for` loop iterates (repeats) over the items in a sequence. 
+
+We'll learn about sequences next workshop, but just to introduce the idea of loops, here are some examples:
+
+Loop through a **list**
+
+```python
+groceries = ['apples', 'eggs', 'milk', 'bread']
+
+for item in groceries:
+    print(item)
+
+# in console -->
+# 'apples'
+# 'eggs'
+# 'milk'
+# 'bread'
+```
 
 ### Exercise 2
 
@@ -143,6 +251,9 @@ yellow --> "Yield!"
 red --> "Stop!"
 
 anything else --> "Bummer..."
+
+
+
 
 
 
