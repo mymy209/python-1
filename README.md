@@ -49,6 +49,74 @@ type(True)
 # anything typed after # or """ will be commented out 
 ```
 
+### Integer Numbers (`<class 'int'>`)
+
+If a number isn't followed by a decimal point, and integer (whole number) is assumed:
+
+```python
+type(25)
+# <class 'int'>
+```
+
+### Floating-point Numbers (`<class 'float'>`)
+
+Numbers with decimal.
+
+```python 
+type(3.14159)
+# <class 'float'>
+
+type(25.)
+# <class 'float'>
+```
+
+### Complex Numbers (`<class 'complex'>`)
+
+Python even has a data type for complex numbers, aka imaginary numbers. 
+
+j = sqrt(-1)
+
+```python
+type(1 + 2j)
+
+# <class 'complex'>
+```
+
+### Booleans (`<class 'bool>`)
+
+Logical data types often used in conditional expressions.
+
+```python
+type(True)
+# <class 'bool'>
+
+type(False)
+# <class 'bool'>
+```
+
+### Strings (`<class 'str'>)
+
+Strings are made up of ordered sequences of characters.
+
+```python 
+type('welcome')
+# <class 'str'>
+
+type(' ')
+# <class 'str'>
+```
+
+### Nothingness (`<class 'NoneType`>)
+
+None is not the same as 0, False, or an empty string. None is a datatype of its own (NoneType) and only None can be None.
+
+```python
+type(None)
+# <class 'NoneType'>
+```
+
+We will go over rest of the data types next time!
+
 ## Intro to Functions
 
 <img src="https://i.imgur.com/7l8ROFn.png">
@@ -60,7 +128,7 @@ There are two steps to creating a funtion:
 1. Declare and define the function
 2. Call the function
 
-Most of the times, data we use in applications are not static and mutate -- we use variables to make it easier to handle these data!
+Most of the times, data we use in applications are not static and mutate -- we use variables to store and handle these data!
 
 Just to get started, let's declare some variables
 ```python
@@ -113,6 +181,120 @@ Create a function called `add_nums2()` that
 ## Control Flow
 
 Control flow refers to the order in which code executes in a program as determined by the use of constructs in the code.
+
+Control flow heavily relies on comparisons, evaluations, and mathmatical operations. Before we get into technical python control flow, let's learn about the basics of control flow in general programming. 
+
+Like stated above, control flow comes down to different code paths executing according to the evaluation of conditional expressions. 
+
+In other words, if the conditional expression evaluates to truthiness, do this, optionally, do something else. 
+
+### Truthy & Falsey in Python
+
+Conditional expressions for `if` statements etc, rely on an expression evaluating to `True`/**truthy** or `False`/**falsey** to deterimine which path the code will follow. 
+
+Falsey values in Python:
+- `False`
+- `None`
+- Zero in any numeric type: `0`, `0.0`, `0j`
+- Empty sequences/collections:
+    - `''` (empty string)
+    - `[]` (empty list)
+    - `()` (empty typle)
+    - `{}` (empty dictionary)
+    - `range(0)` (empty range) 
+
+### Math Operators
+
+- `+` (addition)
+- `-` (subtraction)
+- `*` (multiplication)
+- `/` (division)
+- `%` (modulo/remainder)
+- `**` (exponentiation)
+
+#### Integer Division
+
+As a side note, double-slash will "floor" division (round down to the nearest whole number).
+
+```python
+print(5 // 2)
+# 2
+```
+
+### Comparison Operators
+
+- `<` (less than)
+- `>` (greater than)
+- `<==` (less than or equal)
+- `>==` (greater than or equal)
+- `==` (equal to)
+- `!=` (not equal to)
+
+```python
+8 > 8
+# False: 8 is not greater than 8.
+
+8 >= 8
+# True: 8 is greater than or equal to 8 (checks if 8 is greater than or equal to 8).
+
+8 < 8
+# False: 8 is not less than 8.
+
+7 == 7
+# True: 7 is equal to 7.
+
+7 == "7"
+# False: One is a number and the other is a string.
+
+7 != 7
+# False: 7 equals 7 (checks if they are NOT equal).
+
+6 != 7
+# True: 6 is not equal to 7.
+# Note that in addition to the != operator, you can also use this for inequality
+
+6 <> 7
+# True: 6 is less than 7 (checks if 6 is less than or greater than 7).
+```
+
+### Logical Operators
+
+#### `or` 
+
+If the first operant is truthy, return it, otherwise return the second operand
+
+#### `and`
+
+If the first operand is falsey, return it, otherwise return the second operand.
+
+```python
+True or False
+# True
+
+False or True
+# True
+
+'hello' or 0
+# 'hello'
+
+0 or 'hello'
+# 'hello'
+
+True and False
+# False
+
+False and True
+# False
+
+'hello' and 0
+# 0
+
+0 and 'hello'
+# 0
+
+'hello' and 'tacos'
+# 'tacos'
+```
 
 Generally, there are two types of control flow: 
 - branching (`if`)
@@ -200,11 +382,11 @@ else:
 </p>
 </details>
 
-## Looping
+### Looping
 
 `for` loop iterates (repeats) over the items in a sequence. 
 
-We'll learn about sequences next workshop, but just to introduce the idea of loops, here are some examples:
+We'll learn about sequences next workshop, but here is an example just to introduce the idea of it:
 
 Loop through a **list**
 
@@ -214,11 +396,53 @@ groceries = ['apples', 'eggs', 'milk', 'bread']
 for item in groceries:
     print(item)
 
-# in console -->
 # 'apples'
 # 'eggs'
 # 'milk'
 # 'bread'
+```
+
+`while` loop continuously iterates while a given condition is truthy.
+
+`while` loops are great for when you don't know how many times you will need to iterate.
+
+```python
+while condition:
+    # code block
+```
+
+## Jump
+
+`return` is used to end the execution of the function and "returns" the result to the caller. 
+
+Example:
+
+```python
+def subtract_nums(num1, num2):
+    difference = num1 - num2
+    return difference
+
+print(subtract_nums(10, 5))
+
+# 5
+```
+
+`break` can be used to immediately exit `for` and `while` loops and continue executing any statements that follow them. 
+
+Example: 
+
+```python
+n = 5
+while n > 0:
+    n = n-1
+    if n == 2:
+        break
+    print(n)
+print('Loop is finished')
+
+# 4
+# 3
+# Loop is finished
 ```
 
 ### Exercise 2
@@ -242,15 +466,6 @@ Side note: google is your bestfriend :)
 </p>
 </details>
 
-The message returned would change based on the input; 
-
-green --> "Go!"
-
-yellow --> "Yield!"
-
-red --> "Stop!"
-
-anything else --> "Bummer..."
 
 
 
