@@ -32,7 +32,7 @@ As shown in the tree chart, Python has 5 main data types which each contains mor
 For today, we will learn about integer, float, boolean, and string data types. 
 
 
-## Checking Data Type
+### Checking Data Type
 
 We can use the `type()` python built-in function 
 
@@ -94,7 +94,7 @@ type(False)
 # <class 'bool'>
 ```
 
-### Strings (`<class 'str'>)
+### Strings (`<class 'str'>`)
 
 Strings are made up of ordered sequences of characters.
 
@@ -148,6 +148,8 @@ print(1 + 2)
 print(teacher)
 ```
 
+### Concatination
+
 Now let's get a little more creative: 
 
 ```python
@@ -156,10 +158,97 @@ print('Is ready to get coding: ' + str(ready))
 ```
 
 You can concatinate (combine) words and variables, and print them all together in one single line!
-However, concatination can only be done when the data types of each element is the same. 
+However, concatination (and most operations) can be done only when the data types of each element is the same. 
 To compensate this, we use the `str()` converts the data type (class type) to a string. 
 
-There are many built-in functions that complete specific tasks, but most of the times we code custom functions to do whatever we need to do!
+Here are some conversions we can do when needed:
+
+```python 
+str(item)        # converts item to a string
+int(item, base)  # converts the provided item to an integer with the provided base
+float(item)      # converts the item to a floating-point number
+hex(int)         # converts an integer to a hexadecimal STRING
+oct(int)         # converts an integer to an octal STRING
+tuple(item)      # converts item to a tuple
+list(item)       # converts item to a list
+dict(item)       # converts item to a dictionary
+```
+
+### String Interpolation
+
+String interpolation evaluates Python expressions and embeds the result within strings. 
+Its simple and short syntax can get convinient!
+You just need to add an `f` before the string: 
+
+```python
+state = 'Hawaii'
+year = 1959
+message = f'{state} was the last state to join the U.S. in {year}.'
+```
+
+We can even "inject" the result of the expressions into the formatted string (f-String).
+
+```python
+template = 'My name is {} and I like {}'
+print(template.format('Myra', 'tacos'))
+# 'My name is Myra and I like tacos'
+```
+
+### Useful String Methods
+
+There are many built-in methods for strings! 
+
+```python
+"ace of spades".split(" ")
+# ['ace', 'of', 'spades']
+
+# However, this won't work
+"abcd".split("")
+
+# Instead, use the list() function like this:
+list("abcd")
+# ['a', 'b', 'c', 'd']
+
+"qqxzzz".index("x")  
+# 2  
+# Warning: Raises error if substring not found
+
+
+"boo".upper()
+# "BOO"
+
+"WHY???".lower()
+# "why???"
+
+"Then I went to the store I like".replace("I", "you")
+# 'Then you went to the store you like'
+
+"eggs" in "green eggs and ham"
+# True
+# finds out if a string contains a substring
+```
+
+### Python's Built-in Functions
+
+```python
+len("Tacos")
+# 5
+# finds the length of sequence or collection 
+#(more on these next time!)
+```
+
+Because string is a sequence, we can use square brackets to access the characters in the string (but not to assign them)
+
+```python
+course = 'Intro to Python'
+print(course[0])
+# 'I'
+
+# we can ene use negative indexes!
+last_letter = course[-1]
+print(last_letter)
+# 'n'
+```
 
 ### Exercise 1
 
