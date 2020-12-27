@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/IjMC9s2.png" width=20%>
+<img src="https://i.imgur.com/IjMC9s2.png" width=30%>
 
 # Intro To Python Day 1
 
@@ -115,7 +115,44 @@ type(None)
 # <class 'NoneType'>
 ```
 
-We will go over rest of the data types next time!
+We will go over rest of the data types in depth next time! For now here are some previews...
+
+### Dictionaries (`<class 'dict'>`)
+
+A dictionary provide a container for `key: value` pairs.
+
+```python
+student = {
+    'name': 'Jake', 
+    'course': 'Introduction to Python', 
+    'workshop': 1
+}
+```
+
+### Lists (`<class 'list'>`)
+
+A list provides a container for 0 or more items (elements).
+They can contain items of different types, including dictionaries and nestes lists. 
+
+```python 
+colors = ['red', 'green', 'blue']
+```
+
+### Tuples (`<class 'tuple'>`)
+
+Tuples are very similar to lists, except tuples are immutable. 
+
+```python 
+colors = ('red', 'green', 'blue')
+```
+
+### Sets (`<class 'set'>`)
+
+Sets are similar to lists and tuples, except sets are unorderd, immutable, and do not allow duplicate values. 
+
+```python
+colors = {'red', 'green', 'blue'}
+```
 
 ## Intro to Functions
 
@@ -124,7 +161,7 @@ We will go over rest of the data types next time!
 Functions are great at "encapsulating" a task by combining many instructions into a single line of code. 
 This make code easier to read, understand, organize, and follow the DRY principle of programming. (Don't Repeat Yourself)
 
-There are two steps to creating a funtion: 
+There are two steps to using a funtion: 
 1. Declare and define the function
 2. Call the function
 
