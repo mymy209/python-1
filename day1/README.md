@@ -289,6 +289,12 @@ print(last_letter)
 
 ### Exercise 1
 
+Create a function called `word_count()` that
+- takes a string as a parameter
+- returns the number of words 
+
+### Exercise 2
+
 Create a function called `add_nums()` that
 - takes 2 numbers as parameters
 - returns the sum of 2 numbers
@@ -571,7 +577,7 @@ print('Loop is finished')
 # Loop is finished
 ```
 
-### Exercise 2
+### Exercise 3
 
 Create a function called `signal()` that 
 - prompts what color the signal is
@@ -591,6 +597,10 @@ Side note: google is your bestfriend :)
 
 </p>
 </details>
+
+That's it for today! To get extra practice on control flow and functions, here are some problems you can work on! 
+
+I recommend at least trying few problems because we learned a lot today :)
 
 
 
