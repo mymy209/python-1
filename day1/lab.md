@@ -143,4 +143,4 @@ print(delete_all_occurrences('You are your own person', 'yo'))
 # u are ur own person
 ```
 
-Sample answers can be found [here]!(https://repl.it/@mymy209/Day-1-Practice#main.py)
+Sample answers can be found [here](https://repl.it/@mymy209/Day-1-Practice#main.py)!
