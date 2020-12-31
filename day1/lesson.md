@@ -598,6 +598,33 @@ Side note: google is your bestfriend :)
 </p>
 </details>
 
+### Exercise 4
+
+Create a function called `dog_year()` that 
+- prompts the dog's age in human years
+- calculates the equivalent dog years, where:
+    - The first two years count as 10 years each
+    - Any remaining years count as 7 years each
+- prints the answer in the following format:
+    - The dog's age in dog years is xx
+
+Hint: use the int() function to convert the string returned from input() into an integer
+
+### Exercise 5
+
+Create a function called `typeof_trangle()` that
+- prompts the user to enter the three lengths of a triangle (one at a time):
+    - Enter the lengths of three side of a triangle:
+    - a: 
+    - b:
+    - c:
+- determines if the triangle is:
+    - equalateral: all three sides are equal in length
+    - scalene: all three sides are unequal in length
+    - isosceles: two sides are the same length
+- print a message as:
+    - A triangle with sides of a, b, c is a __ triangle
+
 That's it for today! To get extra practice on control flow and functions, here are some problems you can work on! 
 
 I recommend at least trying few problems because we learned a lot today :)
