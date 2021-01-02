@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/IjMC9s2.png" width=30%>
+<img src="https://i.imgur.com/YQ1xSlv.jpg">
 
 # Intro To Python Day 1
 
