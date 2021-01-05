@@ -7,7 +7,7 @@
 | Sequences |
 | Dictionaries |
 | Sets |
-| Advanced argument passing |
+| Advanced argument Passing |
 
 We will finish up learning the rest of the data types that we didn't cover last time!
 
@@ -467,6 +467,147 @@ print(r, g, b)
 ```
 
 Comma separated variables on the left-side of the assignment operator and a sequence of values on the right is what it takes.
+
+## Sequences Can Be "Sliced"
+
+Slicing is used to create "slices" (copies) of sequences. 
+
+We use a "slice" operator that uses this syntax
+
+```python
+a_sequence[m:n]
+
+short_name = 'Benjamin'[:3]
+print(short_name)
+# Ben
+# slice includes up to, but not including the index to the right of the colon. 
+```
+
+Congratulations, you've learned all data types in Python!
+
+We've learned Python's common data types used as containers for collections of data. 
+
+It takes practice to become more comfortable with these concepts, so I encourage to try these practice problems :)
+
+## Advanced Argument Passing
+
+### `lambda` functions
+
+Lambda functions allow us to give it any number of arguments and implicitly return a value after one expression.
+
+Here are some examples
+
+```python
+# normal function
+def identity(x):
+  return x
+
+# lambda function
+lambda x: x
+```
+
+```python
+(lambda x: x+ 1)(2)
+# 3
+
+# you can name a lambda function since it's an expression
+
+add_one = lambda x: x + 1
+add_one(2)
+# 3
+```
+
+```python
+nums = [1, 3, 2, 6, 5]
+
+odds = list(filter(lambda num: num % 2, nums))
+print(odds)
+# [1, 3, 5]
+```
+
+If you want to go more in-depth, you can check out [here](https://realpython.com/python-lambda/)!
+
+### `*args` Parameter Specifier
+
+Using the `*` specifier in a parameter list  allows us to pass in a varying number of positional arguments into a function
+
+```python
+def f(*args):
+  print( type(args) )
+  for arg in args:
+    print(arg)
+
+f(1, 2, 'SEI')
+''' Output:
+<class 'tuple'>
+1
+2
+SEI
+'''
+```
+
+The identifier used with `*`, i.e., `args`, can be anything, however **by convention, use `args`**.
+
+Always use the `*args` parameter **after** any **required** positional parameters. For example:
+
+```python
+def dev_skills(dev_name, *args):
+  dev = {'name': dev_name, 'skills': []}
+  for skill in args:
+    dev['skills'].append(skill)
+  return dev
+
+print(dev_skills('Alex', 'HTML', 'CSS', 'JavaScript', 'Python'))
+# -> {'name': 'Alex', 'skills': ['HTML', 'CSS', 'JavaScript', 'Python']}
+```
+
+#### Python's `**` Parameter Specifier (`**kwargs`)
+
+If you'd like to be able to access a varying number of **keyword** arguments, use `**kwargs` at the **end of the parameter list**:
+
+```python
+def dev_skills(dev_name, **kwargs):
+  dev = {'name': dev_name, 'skills': {}}
+  # unpacking the tuples returned by the items function
+  for skill, rating in kwargs.items():
+    dev['skills'][skill] = rating
+  return dev
+
+print(dev_skills('Jackie', HTML=5, CSS=3, JavaScript=4, Python=2))
+```
+
+#### Combining Required Positional, Optional Positional (`*args`) & Keyword (`**kwargs`) Arguments
+
+You can define all three types of parameters in a function, but you have to do it in this order:
+
+```python
+def arg_demo(pos1, pos2, *args, **kwargs):
+  print(f'Positional params: {pos1}, {pos2}')
+  print('*args:')
+  for arg in args:
+    print(' ', arg)
+  print('**kwargs:')
+  for keyword, value in kwargs.items():
+    print(f'  {keyword}: {value}')
+
+arg_demo('A', 'B', 1, 2, 3, color='purple', shape='circle')
+
+'''Output:
+Positional params: A, B
+*args:
+  1
+  2
+  3
+**kwargs:
+  color: purple
+  shape: circle
+'''
+```
+
+
+
+
+
 
 
 
