@@ -538,17 +538,15 @@ def f(*args):
     print(arg)
 
 f(1, 2, 'SEI')
-''' Output:
-<class 'tuple'>
-1
-2
-SEI
-'''
+# <class 'tuple'>
+# 1
+# 2
+#SEI
 ```
 
-The identifier used with `*`, i.e., `args`, can be anything, however **by convention, use `args`**.
+The identifier used with `*`, i.e., `args`, can be anything but by convention, we use `args`.
 
-Always use the `*args` parameter **after** any **required** positional parameters. For example:
+Always use the `*args` parameter **after** any required positional parameters. 
 
 ```python
 def dev_skills(dev_name, *args):
@@ -558,12 +556,12 @@ def dev_skills(dev_name, *args):
   return dev
 
 print(dev_skills('Alex', 'HTML', 'CSS', 'JavaScript', 'Python'))
-# -> {'name': 'Alex', 'skills': ['HTML', 'CSS', 'JavaScript', 'Python']}
+# {'name': 'Alex', 'skills': ['HTML', 'CSS', 'JavaScript', 'Python']}
 ```
 
-#### Python's `**` Parameter Specifier (`**kwargs`)
+### `**kwargs` Parameter Specifier
 
-If you'd like to be able to access a varying number of **keyword** arguments, use `**kwargs` at the **end of the parameter list**:
+If you'd like to be able to access a varying number of keyword arguments, use `**kwargs` at the end of the parameter list:
 
 ```python
 def dev_skills(dev_name, **kwargs):
@@ -574,6 +572,7 @@ def dev_skills(dev_name, **kwargs):
   return dev
 
 print(dev_skills('Jackie', HTML=5, CSS=3, JavaScript=4, Python=2))
+# {'name': 'Jackie', 'skills': {'HTML': 5, 'CSS': 3, 'JavaScript': 4, 'Python': 2}}
 ```
 
 #### Combining Required Positional, Optional Positional (`*args`) & Keyword (`**kwargs`) Arguments
